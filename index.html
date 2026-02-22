@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services R.L. — Automatisation Industrielle · Drummondville, Québec</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { lime: '#E9FF52' }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0e0f11;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .marquee-track   { animation: marquee 35s linear infinite; display: flex; }
+    .marquee-track-r { animation: marquee 40s linear infinite reverse; display: flex; }
+    .marquee-wrap { overflow: hidden; }
+    .feature-card-olive  { background: #191e0d; border: 1.5px solid #4a5e1a; }
+    .feature-card-purple { background: #12102a; border: 1.5px solid #6b45c5; }
+    .feature-card-teal   { background: #0c1a18; border: 1.5px solid #1a6b4a; }
+    .mock-row { display:flex; align-items:center; gap:8px; padding:6px 10px; border-radius:6px; background:rgba(255,255,255,.04); margin-bottom:4px; }
+    .mock-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+    .mock-label { font-size:10px; color:rgba(255,255,255,.55); }
+    .mock-badge { font-size:9px; color:rgba(255,255,255,.3); margin-left:auto; }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────── -->
+<nav style="position:sticky;top:0;z-index:50;background:rgba(14,15,17,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);">
+  <div class="max-w-7xl mx-auto px-6" style="height:56px;display:flex;align-items:center;justify-content:space-between;">
+    <div style="display:flex;align-items:center;gap:40px;">
+      <a href="#" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff;font-weight:600;font-size:15px;">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <polygon points="11,2 14,9 21,9 15,14 17,21 11,17 5,21 7,14 1,9 8,9" fill="#E9FF52"/>
+        </svg>
+        Services R.L.
+      </a>
+      <div style="display:flex;align-items:center;gap:28px;font-size:13.5px;color:rgba(255,255,255,.65);">
+        <a href="#" style="color:inherit;text-decoration:none;">Accueil</a>
+        <a href="#services" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:3px;">Services
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#technologies" style="color:inherit;text-decoration:none;">Technologies</a>
+        <a href="#apropos" style="color:inherit;text-decoration:none;">À propos</a>
+        <a href="#contact" style="color:inherit;text-decoration:none;">Contact</a>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:20px;">
+      <a href="tel:8198500460" style="font-size:13.5px;color:rgba(255,255,255,.65);text-decoration:none;">819.850.0460</a>
+      <a href="mailto:info@services-rl.com" style="background:#E9FF52;color:#0e0f11;font-size:13px;font-weight:600;padding:7px 16px;border-radius:99px;text-decoration:none;">Nous contacter</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────── -->
+<section class="max-w-7xl mx-auto px-6" style="padding-top:72px;padding-bottom:80px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+
+    <!-- Left -->
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:99px;padding:4px 12px;font-size:11.5px;color:rgba(255,255,255,.5);margin-bottom:28px;">
+        <span style="width:6px;height:6px;border-radius:50%;background:#E9FF52;display:inline-block;"></span>
+        Depuis 2003 · Drummondville, Québec
+      </div>
+      <h1 style="font-size:58px;font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:24px;">
+        Automatisation,<br>Intégration,<br>Précision.<br>
+        <span style="color:#E9FF52;">Industrie 4.0.</span>
+      </h1>
+      <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,.55);max-width:400px;margin-bottom:32px;">
+        Solutions d'électro-technique industrielle sur mesure — automates programmables, robotique, vision industrielle et modernisation d'équipements pour améliorer vos procédés et votre productivité.
+      </p>
+      <div style="display:flex;align-items:center;gap:20px;">
+        <a href="mailto:info@services-rl.com" style="background:#E9FF52;color:#0e0f11;font-size:13.5px;font-weight:700;padding:11px 22px;border-radius:99px;text-decoration:none;">Demander une évaluation</a>
+        <a href="#services" style="font-size:13.5px;color:rgba(255,255,255,.55);text-decoration:none;display:flex;align-items:center;gap:4px;">Nos services <span style="font-size:16px;">›</span></a>
+      </div>
+    </div>
+
+    <!-- Right: Automation Dashboard Mockup -->
+    <div style="position:relative;">
+      <div style="position:absolute;top:-16px;right:0;font-size:11px;color:rgba(255,255,255,.3);font-weight:500;">Contrôle en temps réel</div>
+
+      <div style="background:#161719;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;box-shadow:0 32px 64px rgba(0,0,0,.5);">
+        <!-- Title bar -->
+        <div style="padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:10px;">
+          <div style="display:flex;gap:5px;">
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.15);"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.15);"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.15);"></div>
+          </div>
+          <div style="flex:1;background:rgba(255,255,255,.06);border-radius:6px;padding:4px 10px;font-size:10px;color:rgba(255,255,255,.25);">Tableau de bord — Ligne de production A</div>
+        </div>
+        <!-- App content -->
+        <div style="padding:16px;">
+          <!-- System status card -->
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px 14px;margin-bottom:12px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+              <div style="display:flex;align-items:center;gap:6px;">
+                <svg width="14" height="14" viewBox="0 0 22 22" fill="none">
+                  <polygon points="11,2 14,9 21,9 15,14 17,21 11,17 5,21 7,14 1,9 8,9" fill="#E9FF52"/>
+                </svg>
+                <span style="font-size:11px;font-weight:600;">Système R.L.</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:4px;font-size:10px;color:#4ade80;">
+                <div style="width:5px;height:5px;border-radius:50%;background:#4ade80;"></div>
+                Opérationnel
+              </div>
+            </div>
+            <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:6px;">MODULES ACTIFS — 6 en ligne</div>
+            <div class="mock-row"><div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">PLC-ControlLogix.plc01</span><span class="mock-badge">AUTO</span></div>
+            <div class="mock-row"><div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">Kinetix-6500.axis01</span><span class="mock-badge">RUN</span></div>
+            <div class="mock-row"><div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">Vision.Cognex-IS3800</span><span class="mock-badge">OK</span></div>
+            <div class="mock-row"><div class="mock-dot" style="background:#facc15;"></div><span class="mock-label">PowerFlex-755.vfd02</span><span class="mock-badge">MAINT</span></div>
+          </div>
+          <!-- KPI card -->
+          <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px 14px;">
+            <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:8px;">INDICATEURS DE PERFORMANCE</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <div style="width:28px;height:28px;border-radius:8px;background:rgba(233,255,82,.15);display:flex;align-items:center;justify-content:center;">
+                <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><path d="M3 17l4-8 4 4 4-6 4 8" stroke="#E9FF52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <div style="font-size:11px;font-weight:500;">Efficacité globale (OEE)</div>
+                <div style="font-size:10px;color:rgba(255,255,255,.4);">OEE: 94.2% · Uptime: 99.1%</div>
+              </div>
+              <div style="margin-left:auto;display:flex;align-items:center;gap:4px;font-size:10px;color:#4ade80;">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                Optimal
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURE ICONS BAR ─────────────────────────── -->
+<div style="border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:24px 0;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:8px;border-right:1px solid rgba(255,255,255,.07);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/></svg>
+        <span style="font-size:13px;font-weight:500;color:rgba(255,255,255,.7);">Automatisation Industrielle</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:8px;border-right:1px solid rgba(255,255,255,.07);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7l-9-5z" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        <span style="font-size:13px;font-weight:500;color:rgba(255,255,255,.7);">L'efficacité par l'expérience</span>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:8px;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path d="M8 12l3 3 5-5" stroke="rgba(255,255,255,.5)" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <span style="font-size:13px;font-weight:500;color:rgba(255,255,255,.7);">Solutions sur mesure</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── LOGO STRIP 1 ──────────────────────────────── -->
+<div style="border-bottom:1px solid rgba(255,255,255,.06);padding:20px 0;overflow:hidden;">
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Allen-Bradley</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Siemens</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Cognex</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">FANUC</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Beckhoff</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Schneider Electric</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Rockwell Automation</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Keyence</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">ABB</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Mitsubishi Electric</span>
+      <!-- set 2 -->
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Allen-Bradley</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Siemens</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Cognex</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">FANUC</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Beckhoff</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Schneider Electric</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Rockwell Automation</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Keyence</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">ABB</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Mitsubishi Electric</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── LOGO STRIP 2 ──────────────────────────────── -->
+<div style="border-bottom:1px solid rgba(255,255,255,.06);padding:20px 0;overflow:hidden;">
+  <div class="marquee-wrap">
+    <div class="marquee-track-r">
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Omron</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Yaskawa</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">SEW-Eurodrive</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Pilz</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Bosch Rexroth</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Lenze</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Sick</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Pepperl+Fuchs</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Festo</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Phoenix Contact</span>
+      <!-- set 2 -->
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Omron</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Yaskawa</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">SEW-Eurodrive</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Pilz</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Bosch Rexroth</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Lenze</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Sick</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Pepperl+Fuchs</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Festo</span>
+      <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.3);white-space:nowrap;padding:0 28px;">Phoenix Contact</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── PLATFORM HEADING ───────────────────────────── -->
+<div style="text-align:center;padding:80px 24px 64px;" id="services">
+  <p style="font-size:12px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">Solutions industrielles</p>
+  <h2 style="font-size:34px;font-weight:700;letter-spacing:-0.5px;">Notre Plateforme d'Automatisation</h2>
+</div>
+
+<!-- ─── FEATURE 1: PLC & AUTOMATISATION ───────────────────────────── -->
+<section class="max-w-7xl mx-auto px-6" style="padding-bottom:80px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+    <div>
+      <p style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Automatisation & Modernisation</p>
+      <h2 style="font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;">Contrôle industriel<br>pour les procédés<br>modernes</h2>
+      <a href="mailto:info@services-rl.com" style="font-size:13px;color:#E9FF52;text-decoration:none;">En savoir plus ›</a>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:16px;">
+        <div>
+          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px;">Automates programmables (PLC) <span style="color:rgba(255,255,255,.35);">›</span></div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;">Programmation, mise en service et dépannage de systèmes Allen-Bradley, Siemens et autres plateformes industrielles.</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px;">Servomoteurs & variateurs de fréquence <span style="color:rgba(255,255,255,.35);">›</span></div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;">Intégration de servomoteurs et variateurs pour un contrôle de mouvement précis et efficace sur vos lignes de production.</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px;">Sécurité machines <span style="color:rgba(255,255,255,.35);">›</span></div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;">Conception et mise en œuvre de systèmes de sécurité conformes aux normes en vigueur pour protéger vos opérateurs.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Olive card -->
+    <div class="feature-card-olive" style="border-radius:16px;padding:20px;">
+      <div style="background:#0e0f11;border-radius:10px;padding:16px;border:1px solid rgba(255,255,255,.06);">
+        <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:10px;letter-spacing:.5px;">AUTOMATES · Ligne-Prod-01</div>
+        <div class="mock-row"><div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">PLC-AB.ControlLogix-L85</span><span class="mock-badge">AUTO</span></div>
+        <div class="mock-row"><div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">Drive.Kinetix-6500.axis01</span><span class="mock-badge">RUN</span></div>
+        <div class="mock-row"><div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">Drive.PowerFlex-755.vfd01</span><span class="mock-badge">RUN</span></div>
+        <div class="mock-row"><div class="mock-dot" style="background:#facc15;"></div><span class="mock-label">Safety.GuardLogix.sfty01</span><span class="mock-badge">TEST</span></div>
+        <div class="mock-row"><div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">HMI.PanelView-5510.hmi01</span><span class="mock-badge">ACTIF</span></div>
+        <div style="margin-top:14px;padding:10px;background:rgba(233,255,82,.06);border:1px solid rgba(233,255,82,.15);border-radius:8px;">
+          <div style="font-size:10px;color:rgba(255,255,255,.5);margin-bottom:4px;">ÉTAT SYSTÈME — Ingénierie R.L.</div>
+          <div style="font-size:11px;color:#E9FF52;">✓ 5 axes actifs · Sécurité OK · OEE 94.2%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURE 2: VISION & ROBOTIQUE ────────────────────────────── -->
+<section class="max-w-7xl mx-auto px-6" style="padding-bottom:80px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+    <div>
+      <p style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Vision & Robotique</p>
+      <h2 style="font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;">Inspection et<br>robotique de<br>précision</h2>
+      <a href="mailto:info@services-rl.com" style="font-size:13px;color:#E9FF52;text-decoration:none;">En savoir plus ›</a>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:16px;">
+        <div>
+          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px;">Systèmes de vision 2D/3D <span style="color:rgba(255,255,255,.35);">›</span></div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;">Intégration de caméras et systèmes de vision Cognex, Keyence pour l'inspection de qualité en ligne et la détection de défauts.</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px;">Robotique industrielle <span style="color:rgba(255,255,255,.35);">›</span></div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;">Intégration de bras robotiques FANUC et autres pour la manutention, l'assemblage et les opérations à haute cadence.</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px;">Mesure de précision <span style="color:rgba(255,255,255,.35);">›</span></div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;">Systèmes de mesure dimensionnelle et de contrôle qualité pour zéro défaut en production.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Purple card -->
+    <div class="feature-card-purple" style="border-radius:16px;padding:20px;">
+      <div style="background:#0e0f11;border-radius:10px;padding:16px;border:1px solid rgba(255,255,255,.06);">
+        <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:10px;letter-spacing:.5px;">INSPECTION VISION — Dernières 8h</div>
+        <div class="mock-row" style="background:rgba(74,222,128,.04);border:1px solid rgba(74,222,128,.15);">
+          <div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">Camera-2D.Cognex-IS3800 — OK</span><span class="mock-badge">1 423 pcs</span>
+        </div>
+        <div class="mock-row" style="background:rgba(74,222,128,.04);border:1px solid rgba(74,222,128,.15);">
+          <div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">Camera-3D.Keyence-LJ-X — OK</span><span class="mock-badge">987 pcs</span>
+        </div>
+        <div class="mock-row" style="background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.15);">
+          <div class="mock-dot" style="background:#ef4444;"></div><span class="mock-label">Rejet.vision.station01 — NOK</span><span class="mock-badge">3 rejets</span>
+        </div>
+        <div style="margin-top:12px;">
+          <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:8px;">CONTRÔLE QUALITÉ ACTIVÉ</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:rgba(107,69,197,.15);border:1px solid rgba(107,69,197,.3);border-radius:8px;">
+            <span style="font-size:11px;color:rgba(255,255,255,.6);">Détection des défauts</span>
+            <div style="width:32px;height:18px;background:#6b45c5;border-radius:99px;position:relative;"><div style="width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:2px;right:2px;"></div></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:rgba(107,69,197,.15);border:1px solid rgba(107,69,197,.3);border-radius:8px;margin-top:6px;">
+            <span style="font-size:11px;color:rgba(255,255,255,.6);">Mesure dimensionnelle</span>
+            <div style="width:32px;height:18px;background:#6b45c5;border-radius:99px;position:relative;"><div style="width:14px;height:14px;background:#fff;border-radius:50%;position:absolute;top:2px;right:2px;"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FEATURE 3: INDUSTRIE 4.0 ────────────────────────────── -->
+<section class="max-w-7xl mx-auto px-6" style="padding-bottom:80px;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+    <div>
+      <p style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Intégration Industrie 4.0</p>
+      <h2 style="font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;">Connectivité et<br>données en temps<br>réel</h2>
+      <a href="mailto:info@services-rl.com" style="font-size:13px;color:#E9FF52;text-decoration:none;">En savoir plus ›</a>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:16px;">
+        <div>
+          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px;">Systèmes d'affichage opérateur (HMI) <span style="color:rgba(255,255,255,.35);">›</span></div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;">Interfaces opérateur intuitives pour la supervision, le diagnostic et le contrôle de vos procédés industriels.</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px;">Solutions d'intégration personnalisées <span style="color:rgba(255,255,255,.35);">›</span></div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;">Architectures sur mesure pour connecter vos machines, systèmes ERP/MES et infrastructures numériques.</p>
+        </div>
+        <div>
+          <div style="font-size:13px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:4px;">Acquisition de données & IIoT <span style="color:rgba(255,255,255,.35);">›</span></div>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);line-height:1.6;">Collecte, analyse et visualisation des données de production pour piloter vos performances en continu.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Teal card -->
+    <div class="feature-card-teal" style="border-radius:16px;padding:20px;">
+      <div style="background:#0e0f11;border-radius:10px;padding:16px;border:1px solid rgba(255,255,255,.06);">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+          <div style="width:24px;height:24px;border-radius:6px;background:rgba(26,107,74,.3);border:1px solid rgba(26,107,74,.5);display:flex;align-items:center;justify-content:center;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#4ade80" stroke-width="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="#4ade80" stroke-width="2"/></svg>
+          </div>
+          <span style="font-size:12px;font-weight:600;">Réseau-Usine-01</span>
+          <span style="font-size:10px;color:#4ade80;margin-left:auto;">● Connecté</span>
+        </div>
+        <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:8px;">192.168.10.0/24 · Réseau industriel Ethernet/IP</div>
+        <div class="mock-row"><div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">SCADA.FactoryTalk-View:8080</span><span class="mock-badge">Superviseur</span></div>
+        <div class="mock-row"><div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">HMI.PanelView-5510:443</span><span class="mock-badge">Opérateur</span></div>
+        <div class="mock-row"><div class="mock-dot" style="background:#4ade80;"></div><span class="mock-label">OPC-UA.DataServer:4840</span><span class="mock-badge">Données</span></div>
+        <div style="margin-top:12px;display:flex;justify-content:flex-end;">
+          <button style="background:#1a6b4a;color:#fff;font-size:10px;padding:6px 14px;border-radius:6px;border:none;cursor:pointer;">Configurer réseau</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NOTRE APPROCHE ─────────────────────────── -->
+<section style="padding:80px 0;text-align:center;background:linear-gradient(180deg,#0e0f11 0%,#111314 100%);">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 style="font-size:40px;font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.15;">Évaluation rapide,<br>solutions économiques</h2>
+    <p style="font-size:15px;color:rgba(255,255,255,.45);margin-bottom:48px;">Pas de délais inutiles. Nous évaluons vos besoins rapidement, proposons des solutions sur mesure et assurons la mise en service avec efficacité.</p>
+    <!-- Process mockup -->
+    <div style="background:#161719;border:1px solid rgba(255,255,255,.09);border-radius:16px;overflow:hidden;text-align:left;">
+      <div style="padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:8px;">
+        <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#ffbd2e;"></div>
+        <div style="width:10px;height:10px;border-radius:50%;background:#28ca41;"></div>
+        <span style="font-size:11px;color:rgba(255,255,255,.3);margin-left:8px;">Projet client — Processus</span>
+      </div>
+      <div style="padding:20px 24px;font-family:'Menlo','Monaco','Courier New',monospace;font-size:12.5px;line-height:2;">
+        <div><span style="color:rgba(255,255,255,.35);">1.</span> <span style="color:#E9FF52;">Analyse des besoins</span> <span style="color:rgba(255,255,255,.3);">→ visite de l'usine</span></div>
+        <div style="color:#4ade80;">&nbsp;&nbsp;✓ Procédés documentés</div>
+        <div style="color:#4ade80;">&nbsp;&nbsp;✓ Équipements existants inventoriés</div>
+        <div style="margin-top:4px;"><span style="color:rgba(255,255,255,.35);">2.</span> <span style="color:#E9FF52;">Conception de la solution</span></div>
+        <div style="color:#4ade80;">&nbsp;&nbsp;✓ Architecture validée</div>
+        <div style="color:#4ade80;">&nbsp;&nbsp;✓ Budget optimisé</div>
+        <div style="margin-top:4px;"><span style="color:rgba(255,255,255,.35);">3.</span> <span style="color:rgba(255,255,255,.6);">Mise en service & formation</span></div>
+        <div style="color:rgba(255,255,255,.5);">&nbsp;&nbsp;→ Suivi post-démarrage inclus</div>
+      </div>
+    </div>
+    <!-- Steps row -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;">
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px;text-align:left;">
+        <div style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:6px;">01</div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Évaluation</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.4);">Visite et analyse de vos besoins spécifiques.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px;text-align:left;">
+        <div style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:6px;">02</div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Conception</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.4);">Solution personnalisée et économique.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px;text-align:left;">
+        <div style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:6px;">03</div>
+        <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Déploiement</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.4);">Mise en service et formation des équipes.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── À PROPOS / BENTO ─────────────────────────────────── -->
+<section style="padding:80px 0;" id="apropos">
+  <div class="max-w-7xl mx-auto px-6">
+    <div style="text-align:center;margin-bottom:40px;">
+      <h2 style="font-size:34px;font-weight:700;letter-spacing:-0.5px;margin-bottom:16px;">Plus de 20 ans d'expertise<br>en automatisation industrielle</h2>
+      <a href="mailto:info@services-rl.com" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:99px;padding:7px 16px;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">
+        Contactez notre équipe ›
+      </a>
+    </div>
+    <!-- Bento grid -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+      <!-- Yellow feature card -->
+      <div style="background:#E9FF52;border-radius:14px;padding:22px;color:#0e0f11;">
+        <p style="font-size:13px;line-height:1.6;margin-bottom:14px;font-weight:500;">Services R.L. conçoit et intègre des solutions d'automatisation industrielle depuis 2003 pour les manufacturiers québécois.</p>
+        <a href="mailto:info@services-rl.com" style="font-size:12px;font-weight:600;color:#0e0f11;text-decoration:none;display:flex;align-items:center;gap:4px;">Nous contacter ›</a>
+        <div style="margin-top:16px;font-size:20px;font-weight:800;letter-spacing:-0.5px;">⚡ Services R.L.</div>
+      </div>
+      <!-- Stat cards -->
+      <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
+        <div style="font-size:48px;font-weight:800;color:#E9FF52;letter-spacing:-2px;">20+</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.5);">Années d'expérience</div>
+      </div>
+      <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;">
+        <div style="font-size:22px;font-weight:800;color:rgba(255,255,255,.7);">RBQ</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.4);">8302-1857-40</div>
+      </div>
+
+      <!-- Row 2 -->
+      <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;">
+          <div style="font-size:15px;font-weight:700;color:rgba(255,255,255,.7);">CMEQ</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;">Membre depuis 2005</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.25);margin-top:2px;">Corp. des Maîtres Électriciens du Québec</div>
+        </div>
+      </div>
+      <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;">
+          <div style="font-size:15px;font-weight:700;color:rgba(255,255,255,.7);">ACQ</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px;">Association de la Construction du Québec</div>
+        </div>
+      </div>
+      <!-- Yellow card 2 -->
+      <div style="background:#E9FF52;border-radius:14px;padding:22px;color:#0e0f11;">
+        <p style="font-size:13px;line-height:1.6;margin-bottom:14px;font-weight:500;">Maîtres électriciens qualifiés, nous livrons des projets clé en main avec un suivi rigoureux de la qualité.</p>
+        <a href="mailto:info@services-rl.com" style="font-size:12px;font-weight:600;color:#0e0f11;text-decoration:none;display:flex;align-items:center;gap:4px;">Demander un devis ›</a>
+      </div>
+
+      <!-- Row 3 -->
+      <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;grid-column:span 2;">
+        <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:12px;">Fondée en 2003 à Drummondville, Services d'Électro Technique R.L. Inc. accompagne les industriels québécois dans leur transformation numérique et l'amélioration de leurs procédés de fabrication.</p>
+        <a href="mailto:info@services-rl.com" style="font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;display:flex;align-items:center;gap:4px;">Contactez-nous ›</a>
+        <div style="margin-top:14px;font-size:16px;font-weight:800;color:rgba(255,255,255,.6);">Services d'Électro Technique R.L. Inc.</div>
+      </div>
+      <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:6px;justify-content:center;align-items:center;">
+        <div style="font-size:36px;font-weight:800;color:rgba(233,255,82,.7);">⚡</div>
+        <div style="font-size:12px;color:rgba(255,255,255,.4);">Drummondville, QC</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.25);">J2C 4Z6</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT / CTA ─────────────────────────────── -->
+<section style="padding:80px 0;background:#111213;" id="contact">
+  <div class="max-w-7xl mx-auto px-6">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+      <div>
+        <p style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Contactez-nous</p>
+        <h2 style="font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;">Prêts à optimiser<br>vos procédés de<br>fabrication?</h2>
+        <p style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:28px;">Notre équipe évalue vos besoins rapidement et propose des solutions économiques adaptées à votre réalité industrielle.</p>
+        <blockquote style="border-left:2px solid rgba(233,255,82,.4);padding-left:16px;margin-bottom:24px;">
+          <p style="font-size:13px;color:rgba(255,255,255,.55);line-height:1.7;font-style:italic;">"L'automatisation pour améliorer vos procédés et votre productivité — c'est notre engagement depuis 2003."</p>
+        </blockquote>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:rgba(233,255,82,.15);display:flex;align-items:center;justify-content:center;font-size:16px;">⚡</div>
+          <div>
+            <div style="font-size:13px;font-weight:600;">Services R.L.</div>
+            <div style="font-size:11px;color:rgba(255,255,255,.4);">Maîtres Électriciens · Drummondville, QC</div>
+          </div>
+        </div>
+      </div>
+      <!-- Contact info card -->
+      <div style="background:#161719;border:1px solid rgba(255,255,255,.09);border-radius:16px;overflow:hidden;">
+        <div style="padding:12px 16px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:8px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#ffbd2e;"></div>
+          <div style="width:10px;height:10px;border-radius:50%;background:#28ca41;"></div>
+          <span style="font-size:11px;color:rgba(255,255,255,.3);margin-left:8px;">Coordonnées</span>
+        </div>
+        <div style="padding:24px;display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(233,255,82,.1);border:1px solid rgba(233,255,82,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="#E9FF52" stroke-width="1.5"/><circle cx="12" cy="9" r="2.5" stroke="#E9FF52" stroke-width="1.5"/></svg>
+            </div>
+            <div>
+              <div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:2px;">Adresse</div>
+              <div style="font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;">1505 Boulevard St-Charles<br>Drummondville, Québec J2C 4Z6</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(233,255,82,.1);border:1px solid rgba(233,255,82,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.81 19.79 19.79 0 01.07 2.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke="#E9FF52" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div>
+              <div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:2px;">Téléphone / Télécopieur</div>
+              <div style="font-size:12px;color:rgba(255,255,255,.7);">819.850.0460 <span style="color:rgba(255,255,255,.3);">·</span> Fax: 819.850.0438</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <div style="width:32px;height:32px;border-radius:8px;background:rgba(233,255,82,.1);border:1px solid rgba(233,255,82,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z" stroke="#E9FF52" stroke-width="1.5"/><path d="M22 6l-10 7L2 6" stroke="#E9FF52" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div>
+              <div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:2px;">Courriel</div>
+              <div style="font-size:12px;color:#E9FF52;">info@services-rl.com</div>
+            </div>
+          </div>
+          <a href="mailto:info@services-rl.com" style="display:block;text-align:center;background:#E9FF52;color:#0e0f11;font-size:13px;font-weight:700;padding:11px;border-radius:10px;text-decoration:none;margin-top:4px;">Envoyer un message ›</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TECHNOLOGIES ─────────────────────────────────── -->
+<section style="padding:80px 0;" id="technologies">
+  <div class="max-w-7xl mx-auto px-6">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+      <div>
+        <p style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Technologies maîtrisées</p>
+        <h2 style="font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;">Un écosystème<br>technologique<br>complet</h2>
+        <p style="font-size:14px;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:28px;">Notre expertise couvre les principales plateformes d'automatisation industrielle — sans remplacement forcé de vos équipements existants.</p>
+        <a href="mailto:info@services-rl.com" style="display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.15);border-radius:99px;padding:8px 18px;font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;">Discuter de votre projet ›</a>
+      </div>
+      <!-- Tech grid -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+        <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,50,50,.12);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ff5555;">AB</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.4);text-align:center;">Allen-Bradley</div>
+        </div>
+        <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,151,255,.12);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#0097ff;">Si</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.4);">Siemens</div>
+        </div>
+        <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,100,30,.12);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ff6820;">Cx</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.4);">Cognex</div>
+        </div>
+        <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,210,0,.12);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ffd200;">Kv</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.4);">Keyence</div>
+        </div>
+        <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,165,0,.12);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ffa500;">FN</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.4);">FANUC</div>
+        </div>
+        <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(0,178,89,.12);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#00b259;">SE</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.4);">Schneider</div>
+        </div>
+        <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(233,255,82,.1);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#E9FF52;">Bk</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.4);">Beckhoff</div>
+        </div>
+        <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;">
+          <div style="width:36px;height:36px;border-radius:8px;background:rgba(220,20,60,.12);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#dc143c;">ABB</div>
+          <div style="font-size:10px;color:rgba(255,255,255,.4);">ABB</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────── -->
+<footer style="border-top:1px solid rgba(255,255,255,.07);padding:60px 0 40px;">
+  <div class="max-w-7xl mx-auto px-6">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
+      <div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;margin-bottom:12px;">
+          <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
+            <polygon points="11,2 14,9 21,9 15,14 17,21 11,17 5,21 7,14 1,9 8,9" fill="#E9FF52"/>
+          </svg>
+          Services R.L.
+        </div>
+        <p style="font-size:13px;color:rgba(255,255,255,.35);line-height:1.7;max-width:220px;">L'automatisation pour améliorer vos procédés et votre productivité.</p>
+        <p style="font-size:11px;color:rgba(255,255,255,.2);margin-top:12px;">RBQ: 8302-1857-40</p>
+      </div>
+      <div>
+        <div style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">Services</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="#services" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">Automatisation PLC</a>
+          <a href="#services" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">Vision industrielle</a>
+          <a href="#services" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">Robotique</a>
+          <a href="#services" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">Sécurité machines</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">Industries</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="#" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">Manufacturier</a>
+          <a href="#" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">Agroalimentaire</a>
+          <a href="#" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">Pharmaceutique</a>
+          <a href="#" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">Énergie</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">Associations</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="#" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">CMEQ</a>
+          <a href="#" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">ACQ</a>
+          <a href="#" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">Facebook</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <a href="tel:8198500460" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">819.850.0460</a>
+          <a href="tel:8198500438" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">Fax: 819.850.0438</a>
+          <a href="mailto:info@services-rl.com" style="font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;">info@services-rl.com</a>
+        </div>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,.07);padding-top:24px;display:flex;align-items:center;justify-content:space-between;">
+      <p style="font-size:12px;color:rgba(255,255,255,.3);">© 2025 Services d'Électro Technique R.L. Inc. Tous droits réservés.</p>
+      <div style="display:flex;gap:20px;">
+        <a href="#" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Politique de confidentialité</a>
+        <a href="mailto:info@services-rl.com" style="font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
