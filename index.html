@@ -36,6 +36,48 @@
     .mock-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
     .mock-label { font-size:10px; color:rgba(255,255,255,.55); }
     .mock-badge { font-size:9px; color:rgba(255,255,255,.3); margin-left:auto; }
+
+    /* ─── RESPONSIVE ─────────────────────────────── */
+    @media (max-width: 900px) {
+      .nav-links { display: none !important; }
+      .nav-phone { display: none !important; }
+      .hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .hero-h1 { font-size: 44px !important; letter-spacing: -1px !important; }
+      .feature-bar-grid { grid-template-columns: 1fr !important; }
+      .feature-bar-grid > div { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,.07); justify-content: flex-start !important; padding-left: 24px !important; }
+      .feature-bar-grid > div:last-child { border-bottom: none !important; }
+      .feature-section-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .steps-grid { grid-template-columns: 1fr !important; }
+      .bento-grid { grid-template-columns: 1fr 1fr !important; }
+      .bento-wide { grid-column: span 2 !important; }
+      .contact-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .tech-section-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .tech-icons-grid { grid-template-columns: repeat(4, 1fr) !important; }
+      .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+    }
+
+    @media (max-width: 600px) {
+      .hero-h1 { font-size: 36px !important; letter-spacing: -0.5px !important; }
+      .hero-ctas { flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; }
+      .hero-mockup { display: none !important; }
+      .bento-grid { grid-template-columns: 1fr !important; }
+      .bento-wide { grid-column: span 1 !important; }
+      .tech-icons-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .footer-grid { grid-template-columns: 1fr 1fr !important; }
+      .section-h2-large { font-size: 28px !important; }
+      .section-h2-xl { font-size: 32px !important; }
+      .nav-cta { padding: 6px 12px !important; font-size: 12px !important; }
+    }
+
+    @media (max-width: 400px) {
+      .footer-grid { grid-template-columns: 1fr !important; }
+    }
+
+    /* Tighten section padding on mobile */
+    @media (max-width: 900px) {
+      .max-w-7xl { padding-left: 20px !important; padding-right: 20px !important; }
+      section.max-w-7xl { padding-top: 48px !important; padding-bottom: 48px !important; }
+    }
   </style>
 </head>
 <body>
@@ -50,7 +92,7 @@
         </svg>
         Services R.L.
       </a>
-      <div style="display:flex;align-items:center;gap:28px;font-size:13.5px;color:rgba(255,255,255,.65);">
+      <div class="nav-links" style="display:flex;align-items:center;gap:28px;font-size:13.5px;color:rgba(255,255,255,.65);">
         <a href="#" style="color:inherit;text-decoration:none;">Accueil</a>
         <a href="#services" style="color:inherit;text-decoration:none;display:flex;align-items:center;gap:3px;">Services
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -61,15 +103,15 @@
       </div>
     </div>
     <div style="display:flex;align-items:center;gap:20px;">
-      <a href="tel:8198500460" style="font-size:13.5px;color:rgba(255,255,255,.65);text-decoration:none;">819.850.0460</a>
-      <a href="mailto:info@services-rl.com" style="background:#E9FF52;color:#0e0f11;font-size:13px;font-weight:600;padding:7px 16px;border-radius:99px;text-decoration:none;">Nous contacter</a>
+      <a href="tel:8198500460" class="nav-phone" style="font-size:13.5px;color:rgba(255,255,255,.65);text-decoration:none;">819.850.0460</a>
+      <a href="mailto:info@services-rl.com" class="nav-cta" style="background:#E9FF52;color:#0e0f11;font-size:13px;font-weight:600;padding:7px 16px;border-radius:99px;text-decoration:none;">Nous contacter</a>
     </div>
   </div>
 </nav>
 
 <!-- ─── HERO ──────────────────────────────────────── -->
 <section class="max-w-7xl mx-auto px-6" style="padding-top:72px;padding-bottom:80px;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+  <div class="hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
 
     <!-- Left -->
     <div>
@@ -77,21 +119,21 @@
         <span style="width:6px;height:6px;border-radius:50%;background:#E9FF52;display:inline-block;"></span>
         Depuis 2003 · Drummondville, Québec
       </div>
-      <h1 style="font-size:58px;font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:24px;">
+      <h1 class="hero-h1" style="font-size:58px;font-weight:800;line-height:1.08;letter-spacing:-1.5px;margin-bottom:24px;">
         Automatisation,<br>Intégration,<br>Précision.<br>
         <span style="color:#E9FF52;">Industrie 4.0.</span>
       </h1>
       <p style="font-size:15px;line-height:1.7;color:rgba(255,255,255,.55);max-width:400px;margin-bottom:32px;">
         Solutions d'électro-technique industrielle sur mesure — automates programmables, robotique, vision industrielle et modernisation d'équipements pour améliorer vos procédés et votre productivité.
       </p>
-      <div style="display:flex;align-items:center;gap:20px;">
+      <div class="hero-ctas" style="display:flex;align-items:center;gap:20px;">
         <a href="mailto:info@services-rl.com" style="background:#E9FF52;color:#0e0f11;font-size:13.5px;font-weight:700;padding:11px 22px;border-radius:99px;text-decoration:none;">Demander une évaluation</a>
         <a href="#services" style="font-size:13.5px;color:rgba(255,255,255,.55);text-decoration:none;display:flex;align-items:center;gap:4px;">Nos services <span style="font-size:16px;">›</span></a>
       </div>
     </div>
 
     <!-- Right: Automation Dashboard Mockup -->
-    <div style="position:relative;">
+    <div class="hero-mockup" style="position:relative;">
       <div style="position:absolute;top:-16px;right:0;font-size:11px;color:rgba(255,255,255,.3);font-weight:500;">Contrôle en temps réel</div>
 
       <div style="background:#161719;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;box-shadow:0 32px 64px rgba(0,0,0,.5);">
@@ -152,7 +194,7 @@
 <!-- ─── FEATURE ICONS BAR ─────────────────────────── -->
 <div style="border-top:1px solid rgba(255,255,255,.07);border-bottom:1px solid rgba(255,255,255,.07);padding:24px 0;">
   <div class="max-w-7xl mx-auto px-6">
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+    <div class="feature-bar-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
       <div style="display:flex;align-items:center;justify-content:center;gap:10px;padding:8px;border-right:1px solid rgba(255,255,255,.07);">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="rgba(255,255,255,.5)" stroke-width="1.5"/></svg>
         <span style="font-size:13px;font-weight:500;color:rgba(255,255,255,.7);">Automatisation Industrielle</span>
@@ -235,7 +277,7 @@
 
 <!-- ─── FEATURE 1: PLC & AUTOMATISATION ───────────────────────────── -->
 <section class="max-w-7xl mx-auto px-6" style="padding-bottom:80px;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+  <div class="feature-section-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
     <div>
       <p style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Automatisation & Modernisation</p>
       <h2 style="font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;">Contrôle industriel<br>pour les procédés<br>modernes</h2>
@@ -275,7 +317,7 @@
 
 <!-- ─── FEATURE 2: VISION & ROBOTIQUE ────────────────────────────── -->
 <section class="max-w-7xl mx-auto px-6" style="padding-bottom:80px;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+  <div class="feature-section-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
     <div>
       <p style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Vision & Robotique</p>
       <h2 style="font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;">Inspection et<br>robotique de<br>précision</h2>
@@ -326,7 +368,7 @@
 
 <!-- ─── FEATURE 3: INDUSTRIE 4.0 ────────────────────────────── -->
 <section class="max-w-7xl mx-auto px-6" style="padding-bottom:80px;">
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+  <div class="feature-section-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
     <div>
       <p style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Intégration Industrie 4.0</p>
       <h2 style="font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;">Connectivité et<br>données en temps<br>réel</h2>
@@ -371,7 +413,7 @@
 <!-- ─── NOTRE APPROCHE ─────────────────────────── -->
 <section style="padding:80px 0;text-align:center;background:linear-gradient(180deg,#0e0f11 0%,#111314 100%);">
   <div class="max-w-3xl mx-auto px-6">
-    <h2 style="font-size:40px;font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.15;">Évaluation rapide,<br>solutions économiques</h2>
+    <h2 class="section-h2-xl" style="font-size:40px;font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.15;">Évaluation rapide,<br>solutions économiques</h2>
     <p style="font-size:15px;color:rgba(255,255,255,.45);margin-bottom:48px;">Pas de délais inutiles. Nous évaluons vos besoins rapidement, proposons des solutions sur mesure et assurons la mise en service avec efficacité.</p>
     <!-- Process mockup -->
     <div style="background:#161719;border:1px solid rgba(255,255,255,.09);border-radius:16px;overflow:hidden;text-align:left;">
@@ -393,7 +435,7 @@
       </div>
     </div>
     <!-- Steps row -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;">
+    <div class="steps-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;">
       <div style="background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:18px;text-align:left;">
         <div style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:6px;">01</div>
         <div style="font-size:13px;font-weight:600;margin-bottom:4px;">Évaluation</div>
@@ -417,13 +459,13 @@
 <section style="padding:80px 0;" id="apropos">
   <div class="max-w-7xl mx-auto px-6">
     <div style="text-align:center;margin-bottom:40px;">
-      <h2 style="font-size:34px;font-weight:700;letter-spacing:-0.5px;margin-bottom:16px;">Plus de 20 ans d'expertise<br>en automatisation industrielle</h2>
+      <h2 class="section-h2-large" style="font-size:34px;font-weight:700;letter-spacing:-0.5px;margin-bottom:16px;">Plus de 20 ans d'expertise<br>en automatisation industrielle</h2>
       <a href="mailto:info@services-rl.com" style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:99px;padding:7px 16px;font-size:13px;color:rgba(255,255,255,.6);text-decoration:none;">
         Contactez notre équipe ›
       </a>
     </div>
     <!-- Bento grid -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
+    <div class="bento-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;">
       <!-- Yellow feature card -->
       <div style="background:#E9FF52;border-radius:14px;padding:22px;color:#0e0f11;">
         <p style="font-size:13px;line-height:1.6;margin-bottom:14px;font-weight:500;">Services R.L. conçoit et intègre des solutions d'automatisation industrielle depuis 2003 pour les manufacturiers québécois.</p>
@@ -461,7 +503,7 @@
       </div>
 
       <!-- Row 3 -->
-      <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;grid-column:span 2;">
+      <div class="bento-wide" style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;grid-column:span 2;">
         <p style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6;margin-bottom:12px;">Fondée en 2003 à Drummondville, Services d'Électro Technique R.L. Inc. accompagne les industriels québécois dans leur transformation numérique et l'amélioration de leurs procédés de fabrication.</p>
         <a href="mailto:info@services-rl.com" style="font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;display:flex;align-items:center;gap:4px;">Contactez-nous ›</a>
         <div style="margin-top:14px;font-size:16px;font-weight:800;color:rgba(255,255,255,.6);">Services d'Électro Technique R.L. Inc.</div>
@@ -478,7 +520,7 @@
 <!-- ─── CONTACT / CTA ─────────────────────────────── -->
 <section style="padding:80px 0;background:#111213;" id="contact">
   <div class="max-w-7xl mx-auto px-6">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+    <div class="feature-section-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
       <div>
         <p style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Contactez-nous</p>
         <h2 style="font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;">Prêts à optimiser<br>vos procédés de<br>fabrication?</h2>
@@ -540,7 +582,7 @@
 <!-- ─── TECHNOLOGIES ─────────────────────────────────── -->
 <section style="padding:80px 0;" id="technologies">
   <div class="max-w-7xl mx-auto px-6">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
+    <div class="tech-section-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;">
       <div>
         <p style="font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Technologies maîtrisées</p>
         <h2 style="font-size:36px;font-weight:700;line-height:1.15;letter-spacing:-0.5px;margin-bottom:18px;">Un écosystème<br>technologique<br>complet</h2>
@@ -548,7 +590,7 @@
         <a href="mailto:info@services-rl.com" style="display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,.15);border-radius:99px;padding:8px 18px;font-size:13px;color:rgba(255,255,255,.7);text-decoration:none;">Discuter de votre projet ›</a>
       </div>
       <!-- Tech grid -->
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <div class="tech-icons-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
         <div style="background:#161719;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center;gap:6px;">
           <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,50,50,.12);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ff5555;">AB</div>
           <div style="font-size:10px;color:rgba(255,255,255,.4);text-align:center;">Allen-Bradley</div>
@@ -589,7 +631,7 @@
 <!-- ─── FOOTER ────────────────────────────────────── -->
 <footer style="border-top:1px solid rgba(255,255,255,.07);padding:60px 0 40px;">
   <div class="max-w-7xl mx-auto px-6">
-    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
+    <div class="footer-grid" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;">
       <div>
         <div style="display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;margin-bottom:12px;">
           <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
